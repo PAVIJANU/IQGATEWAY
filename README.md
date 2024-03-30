@@ -53,25 +53,25 @@ We employed the Autoregressive Integrated Moving Average (ARIMA) model for forec
 
 **7. Results:**
 The ARIMA model produced forecasts for Gazoza sales in 2018, along with corresponding confidence intervals. The forecasted values were compared against actual test data from 2018 to evaluate the model's performance.
-
+**FUTURE WORK**
 **9. Model Evaluation:**
 To ensure the robustness and reliability of the forecasting model, we propose the utilization of nested cross-validation. Nested cross-validation is a powerful technique for model evaluation, particularly in time series analysis, as it addresses issues such as data leakage and overfitting.
 
 **Nested Cross-Validation:**
-Nested cross-validation involves two levels of cross-validation loops:
-Outer Loop: Divides the dataset into multiple train-test splits. Each split serves as a holdout set for evaluating the model's performance.
-Inner Loop: Implements cross-validation within each training set to tune model hyperparameters and select the best configuration.
+**Nested cross-validation involves two levels of cross-validation loops:**
+**Outer Loop:** Divides the dataset into multiple train-test splits. Each split serves as a holdout set for evaluating the model's performance.
+**Inner Loop:** Implements cross-validation within each training set to tune model hyperparameters and select the best configuration.
 
 **Advantages of Nested Cross-Validation:**
-Avoids Data Leakage: Nested cross-validation ensures that model evaluation is conducted on unseen data, preventing information leakage from training to testing sets.
-Robust Performance Estimation: By averaging performance metrics across multiple iterations, nested cross-validation provides more reliable estimates of model performance.
-Hyperparameter Tuning: The inner loop allows for hyperparameter tuning, optimizing model parameters for better generalization.
+**Avoids Data Leakage:** Nested cross-validation ensures that model evaluation is conducted on unseen data, preventing information leakage from training to testing sets.
+**Robust Performance Estimation:** By averaging performance metrics across multiple iterations, nested cross-validation provides more reliable estimates of model performance.
+**Hyperparameter Tuning:** The inner loop allows for hyperparameter tuning, optimizing model parameters for better generalization.
 
 **Implementation:**
-Outer Loop: Split the dataset into multiple train-test splits, ensuring temporal order is maintained. Each split represents a distinct time period.
-Inner Loop: Within each training set, perform cross-validation to tune ARIMA model parameters, such as the order of autoregressive (p), integrated (d), and moving average (q) components.
-Model Evaluation: Calculate evaluation metrics such as Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE) for each iteration of the outer loop.
-Aggregate Results: Average performance metrics across all outer loop iterations to obtain final model evaluation scores.
+**Outer Loop:** Split the dataset into multiple train-test splits, ensuring temporal order is maintained. Each split represents a distinct time period.
+**Inner Loop:** Within each training set, perform cross-validation to tune ARIMA model parameters, such as the order of autoregressive (p), integrated (d), and moving average (q) components.
+**Model Evaluation:** Calculate evaluation metrics such as Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE) for each iteration of the outer loop.
+**Aggregate Results:** Average performance metrics across all outer loop iterations to obtain final model evaluation scores.
 
 **Conclusion:**
 By incorporating nested cross-validation into the model evaluation process, we can ensure the robustness and generalizability of the ARIMA forecasting model for demand dataset. This rigorous evaluation approach enhances confidence in the model's predictive capabilities and facilitates informed decision-making for stakeholders in the beverage industry.
